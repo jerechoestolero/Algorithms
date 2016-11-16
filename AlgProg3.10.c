@@ -8,7 +8,11 @@
  * task, we need to maintain links to three consecutive nodes in the list.
  */
  
- typedef struct node* link;
+#include <stdio.h>
+#include <stdlib.h>
+
+#define N 9     /* Number of elements in the link lists. */
+typedef struct node* link;
  struct node {
   int item;
   link next;
@@ -38,6 +42,19 @@ link reverse(link x)
  */
 int main(int argc, char *argv[])
 {
+ link x;
+ int i;
  
+ /*
+  * Create a link list.
+  */
+ x = (link)malloc(sizeof(struct node));
+ x->item = 1;
+ x->next = NULL;
+ 
+ for(i=2;i<=N;i++)
+ {
+   
+ }
  return 0;
 }
