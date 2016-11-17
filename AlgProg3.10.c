@@ -42,19 +42,37 @@ link reverse(link x)
  */
 int main(int argc, char *argv[])
 {
- link x;
+ link head,x;
  int i;
  
  /*
   * Create a link list.
   */
- x = (link)malloc(sizeof(struct node));
- x->item = 1;
- x->next = NULL;
+ head = (link)malloc(sizeof(struct node));
+ head->item = 1;
+ head->next = NULL;
  
+ /*
+  * Insert elements to the link list.
+  *
+  * Inserting an element (Long procedure)
+  * link temp = (link)malloc(sizeof(struct node));
+  * head->next=temp;
+  * head=head->next;
+  *
+  *********************************************************
+  * Inserting an element (Shortcut procedure)
+  * More readable code
+  * head=(head->next=(link)malloc(sizeof(struct node)));
+  */
+ x=head;
  for(i=2;i<=N;i++)
  {
-   
+   x=(x->next=(link)malloc(sizeof(struct node)));
+   x->item=i;
+   if(i==N)
+     x->next=NULL;
  }
+ 
  return 0;
 }
