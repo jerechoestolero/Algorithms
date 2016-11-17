@@ -74,5 +74,16 @@ int main(int argc, char *argv[])
      x->next=NULL;
  }
  
+ /*
+  * Print the link lists.
+  */
+ x=head;
+ do{
+  printf("Address: 0x%x\n",(unsigned int)x);
+  printf("Item: %d\n",x->item);
+  printf("Next: 0x%x\n",(unsigned int)x->next);
+  x=x->next;
+ }while(x!=NULL);
+ 
  return 0;
 }
