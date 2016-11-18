@@ -19,7 +19,7 @@ typedef struct node* link;
 };
 
 /*
- * Function to reverse the links.
+ * Revser function from Algorithms Program 3.10
  */
 link reverse(link x)
 {
