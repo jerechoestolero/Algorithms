@@ -79,11 +79,28 @@ int main(int argc, char *argv[])
   */
  x=head;
  do{
-  printf("Address: 0x%x\n",(unsigned int)x);
+  printf("Address: 0x%p\n",x);
   printf("Item: %d\n",x->item);
-  printf("Next: 0x%x\n",(unsigned int)x->next);
+  printf("Next: 0x%p\n",x->next);
   x=x->next;
  }while(x!=NULL);
  
+ /*
+  * Reversing the link list.
+  */
+ printf("\nReversing the link list.\n\n");
+ 
+ x=head;
+ x=reverse(x);
+ 
+ /*
+  * Print the reverse link list.
+  */
+ do{
+  printf("Address: 0x%p\n",x);
+  printf("Item: %d\n",x->item);
+  printf("Next: 0x%p\n",x->next);
+  
+ }while(x!=NULL);
  return 0;
 }
